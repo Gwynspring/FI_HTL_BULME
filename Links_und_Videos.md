@@ -16,7 +16,7 @@ Hier findest du nützliche Videos und Links zu verschiedenen Themen, die dir hel
 - **[Mr P Solver](https://www.youtube.com/@MrPSolver)**
   Einer der besten Youtuber für Python und Mathematik mit Python. Er hat auch andere Themen die er gut behandelt.
 
-- **[freeCodeCamp.org](https://www.youtube.com/@freecodecamp)
+- **[freeCodeCamp.org](https://www.youtube.com/@freecodecamp)**
   Sehr viele gute Videos zu unterschiedlichen Themen. Die meisten Videos sind aber eher für alle die viel Zeit mit dem Programmieren verbringen wollen.
 
 - **[C# Full Course : C# Tutorial for Beginners](https://www.youtube.com/watch?v=M5ugY7fWydE&t=21973s)**
