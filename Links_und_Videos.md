@@ -24,6 +24,9 @@ Hier findest du nützliche Videos und Links zu verschiedenen Themen, die dir hel
 - **[SOSCSRPG](https://www.youtube.com/@SOSCSRPG)**
   Ein Leitfaden zum Erstellen eines eigenen RPGs mit C#, einschließlich der Erklärung von OOP und Design Patterns.
 
+- **[Codewars](https://www.codewars.com/trainer/setup)**
+  Onlinetraining für alle gängigen Programmiersprachen
+
 ## Datenbanken
 
 - **[Learn MongoDB in 1 Hour](https://www.youtube.com/watch?v=c2M-rlkkT5o&t=28s)**
