@@ -43,4 +43,5 @@ Verwende klare und prägnante Commit-Nachrichten. Beispiele:
 
 - [Git-Dokumentation](https://git-scm.com/doc)
 - [GitHub Hilfe](https://docs.github.com/en/github)
+- [GitCheatsheet](https://ndpsoftware.com/git-cheatsheet.html#loc=index;)
 
