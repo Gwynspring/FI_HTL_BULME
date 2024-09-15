@@ -27,6 +27,9 @@ Hier findest du nützliche Videos und Links zu verschiedenen Themen, die dir hel
 - **[Codewars](https://www.codewars.com/trainer/setup)**
   Onlinetraining für alle gängigen Programmiersprachen
 
+- **[Bitmanipulation](https://www.mikrocontroller.net/articles/Bitmanipulation)**
+  Kurze Zusammenfassung der Bitmanipulation für den Mikrokontroller
+
 ## Datenbanken
 
 - **[Learn MongoDB in 1 Hour](https://www.youtube.com/watch?v=c2M-rlkkT5o&t=28s)**
