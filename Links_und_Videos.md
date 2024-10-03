@@ -34,3 +34,11 @@ Hier findest du nützliche Videos und Links zu verschiedenen Themen, die dir hel
 
 - **[Learn MongoDB in 1 Hour](https://www.youtube.com/watch?v=c2M-rlkkT5o&t=28s)**
   Eine Einführung in die MongoDB-Datenbank.
+  
+## Design Patterns
+- **[Design Patterns Guru] (https://refactoring.guru/)**
+  Hier findet man alle Infos zu Design Patterns und Refactoring
+
+## Podcast
+- **[Programming Throdown](https://www.programmingthrowdown.com/)**
+  Mein Lieblingspodcast mit vielen Unteschiedlichen Themen.
