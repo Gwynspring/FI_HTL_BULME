@@ -1,5 +1,5 @@
-# FI_24-25_WS
-Mitschrift für den Unterricht von Peter Frauscher im Wintersemester (5. Semester) des Abendkollegs für Elektrotechnik.
+# FI_HTL_Bulme
+Mitschrift für den Unterricht von Peter Frauscher des Abendkollegs für Elektrotechnik.
 
 Ich werde jede Woche nach dem Unterricht die bearbeiteten Dateien hochladen, sodass alle, die eine Einheit verpasst haben, mit dem aktuellen Stand weitermachen können.
 
