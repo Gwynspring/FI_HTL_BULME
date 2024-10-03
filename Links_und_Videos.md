@@ -36,7 +36,7 @@ Hier findest du nützliche Videos und Links zu verschiedenen Themen, die dir hel
   Eine Einführung in die MongoDB-Datenbank.
   
 ## Design Patterns
-- **[Design Patterns Guru] (https://refactoring.guru/)**
+- **[Design Patterns Guru](https://refactoring.guru/)**
   Hier findet man alle Infos zu Design Patterns und Refactoring
 
 ## Podcast
