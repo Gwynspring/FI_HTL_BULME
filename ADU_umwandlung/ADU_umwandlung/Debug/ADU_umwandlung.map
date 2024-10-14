@@ -21,6 +21,9 @@ Discarded input sections
 
  .data          0x00000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega2560/avr6/crtatmega2560.o
  .bss           0x00000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega2560/avr6/crtatmega2560.o
+ .text          0x00000000        0x0 ADU_ATMEGA2560_Addon_Board.o
+ .data          0x00000000        0x0 ADU_ATMEGA2560_Addon_Board.o
+ .bss           0x00000000        0x0 ADU_ATMEGA2560_Addon_Board.o
  .text          0x00000000        0x0 BitMaskenFunktionen.o
  .data          0x00000000        0x0 BitMaskenFunktionen.o
  .bss           0x00000000        0x0 BitMaskenFunktionen.o
@@ -102,6 +105,7 @@ Linker script and memory map
 
 Address of section .data set to 0x800200
 LOAD C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega2560/avr6/crtatmega2560.o
+LOAD ADU_ATMEGA2560_Addon_Board.o
 LOAD BitMaskenFunktionen.o
 LOAD LCD_ATMEGA2560_Addon_Board.o
 LOAD main.o
@@ -214,7 +218,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0x9cc
+.text           0x00000000      0xa0a
  *(.vectors)
  .vectors       0x00000000       0xe4 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega2560/avr6/crtatmega2560.o
                 0x00000000                __vector_default
@@ -330,58 +334,64 @@ END GROUP
                 0x00000112                __vector_42
                 0x00000114                . = ALIGN (0x2)
  *(.text.*)
+ .text.ADU_Init
+                0x00000114        0xe ADU_ATMEGA2560_Addon_Board.o
+                0x00000114                ADU_Init
+ .text.ADU_Read
+                0x00000122       0x3c ADU_ATMEGA2560_Addon_Board.o
+                0x00000122                ADU_Read
  .text.BitQuery
-                0x00000114       0x1c BitMaskenFunktionen.o
-                0x00000114                BitQuery
+                0x0000015e       0x1c BitMaskenFunktionen.o
+                0x0000015e                BitQuery
  .text.LCD_Send4Bit
-                0x00000130       0xcc LCD_ATMEGA2560_Addon_Board.o
-                0x00000130                LCD_Send4Bit
+                0x0000017a       0xcc LCD_ATMEGA2560_Addon_Board.o
+                0x0000017a                LCD_Send4Bit
  .text.LCD_Send8Bit
-                0x000001fc       0x2c LCD_ATMEGA2560_Addon_Board.o
-                0x000001fc                LCD_Send8Bit
+                0x00000246       0x2c LCD_ATMEGA2560_Addon_Board.o
+                0x00000246                LCD_Send8Bit
  .text.LCD_Reset
-                0x00000228       0x4e LCD_ATMEGA2560_Addon_Board.o
-                0x00000228                LCD_Reset
+                0x00000272       0x4e LCD_ATMEGA2560_Addon_Board.o
+                0x00000272                LCD_Reset
  .text.LCD_Clear
-                0x00000276       0x14 LCD_ATMEGA2560_Addon_Board.o
-                0x00000276                LCD_Clear
+                0x000002c0       0x14 LCD_ATMEGA2560_Addon_Board.o
+                0x000002c0                LCD_Clear
  .text.LCD_Init
-                0x0000028a       0x90 LCD_ATMEGA2560_Addon_Board.o
-                0x0000028a                LCD_Init
+                0x000002d4       0x90 LCD_ATMEGA2560_Addon_Board.o
+                0x000002d4                LCD_Init
  .text.LCD_SetCursorPos
-                0x0000031a       0x1a LCD_ATMEGA2560_Addon_Board.o
-                0x0000031a                LCD_SetCursorPos
+                0x00000364       0x1a LCD_ATMEGA2560_Addon_Board.o
+                0x00000364                LCD_SetCursorPos
  .text.LCD_SendData
-                0x00000334       0x14 LCD_ATMEGA2560_Addon_Board.o
-                0x00000334                LCD_SendData
+                0x0000037e       0x14 LCD_ATMEGA2560_Addon_Board.o
+                0x0000037e                LCD_SendData
  .text.LCD_SendText
-                0x00000348       0x3c LCD_ATMEGA2560_Addon_Board.o
-                0x00000348                LCD_SendText
- .text.main     0x00000384       0x8e main.o
-                0x00000384                main
+                0x00000392       0x3c LCD_ATMEGA2560_Addon_Board.o
+                0x00000392                LCD_SendText
+ .text.main     0x000003ce       0x82 main.o
+                0x000003ce                main
  .text.avr-libc
-                0x00000412       0x5c c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr6\libc.a(sprintf.o)
-                0x00000412                sprintf
+                0x00000450       0x5c c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr6\libc.a(sprintf.o)
+                0x00000450                sprintf
  .text.avr-libc
-                0x0000046e      0x3fa c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr6\libc.a(vfprintf_std.o)
-                0x0000046e                vfprintf
+                0x000004ac      0x3fa c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr6\libc.a(vfprintf_std.o)
+                0x000004ac                vfprintf
  .text.avr-libc
-                0x00000868       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr6\libc.a(strnlen_P.o)
-                0x00000868                strnlen_P
+                0x000008a6       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr6\libc.a(strnlen_P.o)
+                0x000008a6                strnlen_P
  .text.avr-libc
-                0x0000087e       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr6\libc.a(strnlen.o)
-                0x0000087e                strnlen
+                0x000008bc       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr6\libc.a(strnlen.o)
+                0x000008bc                strnlen
  .text.avr-libc
-                0x00000894       0x78 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr6\libc.a(fputc.o)
-                0x00000894                fputc
+                0x000008d2       0x78 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr6\libc.a(fputc.o)
+                0x000008d2                fputc
  .text.avr-libc
-                0x0000090c       0xbc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr6\libc.a(ultoa_invert.o)
-                0x0000090c                __ultoa_invert
-                0x000009c8                . = ALIGN (0x2)
+                0x0000094a       0xbc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr6\libc.a(ultoa_invert.o)
+                0x0000094a                __ultoa_invert
+                0x00000a06                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x000009c8        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_exit.o)
-                0x000009c8                _exit
-                0x000009c8                exit
+ .fini9         0x00000a06        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_exit.o)
+                0x00000a06                _exit
+                0x00000a06                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -400,11 +410,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x000009c8        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_exit.o)
+ .fini0         0x00000a06        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr6\libgcc.a(_exit.o)
  *(.fini0)
-                0x000009cc                _etext = .
+                0x00000a0a                _etext = .
 
-.data           0x00800200       0x24 load address 0x000009cc
+.data           0x00800200       0x34 load address 0x00000a0a
                 0x00800200                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -425,27 +435,27 @@ END GROUP
  *(.rodata)
  *(.rodata*)
  .rodata.str1.1
-                0x00800218        0xb main.o
+                0x00800218       0x1b main.o
  *(.gnu.linkonce.r*)
-                0x00800224                . = ALIGN (0x2)
- *fill*         0x00800223        0x1 
-                0x00800224                _edata = .
-                0x00800224                PROVIDE (__data_end, .)
+                0x00800234                . = ALIGN (0x2)
+ *fill*         0x00800233        0x1 
+                0x00800234                _edata = .
+                0x00800234                PROVIDE (__data_end, .)
 
-.bss            0x00800224        0x0
+.bss            0x00800234        0x0
                 [!provide]                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
  *(COMMON)
                 [!provide]                PROVIDE (__bss_end, .)
-                0x000009cc                __data_load_start = LOADADDR (.data)
-                0x000009f0                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00000a0a                __data_load_start = LOADADDR (.data)
+                0x00000a3e                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x00800224        0x0
+.noinit         0x00800234        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
  *(.noinit*)
                 [!provide]                PROVIDE (__noinit_end, .)
-                0x00800224                _end = .
+                0x00800234                _end = .
                 [!provide]                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
@@ -487,8 +497,9 @@ END GROUP
 
 .comment        0x00000000       0x5c
  *(.comment)
- .comment       0x00000000       0x30 BitMaskenFunktionen.o
+ .comment       0x00000000       0x30 ADU_ATMEGA2560_Addon_Board.o
                                  0x31 (size before relaxing)
+ .comment       0x00000030       0x31 BitMaskenFunktionen.o
  .comment       0x00000030       0x31 LCD_ATMEGA2560_Addon_Board.o
  .comment       0x00000030       0x31 main.o
  .comment       0x00000030       0x31 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr6\libc.a(sprintf.o)
@@ -516,60 +527,69 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000       0xb0
+.debug_aranges  0x00000000       0xd8
  *(.debug_aranges)
  .debug_aranges
-                0x00000000       0x38 BitMaskenFunktionen.o
+                0x00000000       0x28 ADU_ATMEGA2560_Addon_Board.o
  .debug_aranges
-                0x00000038       0x58 LCD_ATMEGA2560_Addon_Board.o
+                0x00000028       0x38 BitMaskenFunktionen.o
  .debug_aranges
-                0x00000090       0x20 main.o
+                0x00000060       0x58 LCD_ATMEGA2560_Addon_Board.o
+ .debug_aranges
+                0x000000b8       0x20 main.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x154e
+.debug_info     0x00000000     0x16e3
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0xbbc C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega2560/avr6/crtatmega2560.o
- .debug_info    0x00000bbc      0x17c BitMaskenFunktionen.o
- .debug_info    0x00000d38      0x6be LCD_ATMEGA2560_Addon_Board.o
- .debug_info    0x000013f6      0x158 main.o
+ .debug_info    0x00000bbc       0xf9 ADU_ATMEGA2560_Addon_Board.o
+ .debug_info    0x00000cb5      0x17c BitMaskenFunktionen.o
+ .debug_info    0x00000e31      0x6be LCD_ATMEGA2560_Addon_Board.o
+ .debug_info    0x000014ef      0x1f4 main.o
 
-.debug_abbrev   0x00000000      0xe4a
+.debug_abbrev   0x00000000      0xf1f
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0xb1a C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega2560/avr6/crtatmega2560.o
- .debug_abbrev  0x00000b1a       0xac BitMaskenFunktionen.o
- .debug_abbrev  0x00000bc6      0x1a9 LCD_ATMEGA2560_Addon_Board.o
- .debug_abbrev  0x00000d6f       0xdb main.o
+ .debug_abbrev  0x00000b1a       0xb2 ADU_ATMEGA2560_Addon_Board.o
+ .debug_abbrev  0x00000bcc       0xac BitMaskenFunktionen.o
+ .debug_abbrev  0x00000c78      0x1a9 LCD_ATMEGA2560_Addon_Board.o
+ .debug_abbrev  0x00000e21       0xfe main.o
 
-.debug_line     0x00000000      0x776
+.debug_line     0x00000000      0x867
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x1fa C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega2560/avr6/crtatmega2560.o
- .debug_line    0x000001fa      0x104 BitMaskenFunktionen.o
- .debug_line    0x000002fe      0x347 LCD_ATMEGA2560_Addon_Board.o
- .debug_line    0x00000645      0x131 main.o
+ .debug_line    0x000001fa      0x10e ADU_ATMEGA2560_Addon_Board.o
+ .debug_line    0x00000308      0x104 BitMaskenFunktionen.o
+ .debug_line    0x0000040c      0x347 LCD_ATMEGA2560_Addon_Board.o
+ .debug_line    0x00000753      0x114 main.o
 
-.debug_frame    0x00000000      0x150
+.debug_frame    0x00000000      0x184
  *(.debug_frame)
- .debug_frame   0x00000000       0x54 BitMaskenFunktionen.o
- .debug_frame   0x00000054       0xc8 LCD_ATMEGA2560_Addon_Board.o
- .debug_frame   0x0000011c       0x34 main.o
+ .debug_frame   0x00000000       0x34 ADU_ATMEGA2560_Addon_Board.o
+ .debug_frame   0x00000034       0x54 BitMaskenFunktionen.o
+ .debug_frame   0x00000088       0xc8 LCD_ATMEGA2560_Addon_Board.o
+ .debug_frame   0x00000150       0x34 main.o
 
-.debug_str      0x00000000      0x6c1
+.debug_str      0x00000000      0x71d
  *(.debug_str)
  .debug_str     0x00000000      0x3e6 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega2560/avr6/crtatmega2560.o
- .debug_str     0x000003e6      0x181 BitMaskenFunktionen.o
+ .debug_str     0x000003e6      0x198 ADU_ATMEGA2560_Addon_Board.o
+                                0x1d1 (size before relaxing)
+ .debug_str     0x0000057e       0x3c BitMaskenFunktionen.o
                                 0x1ba (size before relaxing)
- .debug_str     0x00000567      0x12e LCD_ATMEGA2560_Addon_Board.o
+ .debug_str     0x000005ba      0x12e LCD_ATMEGA2560_Addon_Board.o
                                 0x2a3 (size before relaxing)
- .debug_str     0x00000695       0x2c main.o
-                                0x1ce (size before relaxing)
+ .debug_str     0x000006e8       0x35 main.o
+                                0x1ea (size before relaxing)
 
-.debug_loc      0x00000000      0x5f1
+.debug_loc      0x00000000      0x69d
  *(.debug_loc)
- .debug_loc     0x00000000       0x28 BitMaskenFunktionen.o
- .debug_loc     0x00000028      0x56a LCD_ATMEGA2560_Addon_Board.o
- .debug_loc     0x00000592       0x5f main.o
+ .debug_loc     0x00000000       0x4c ADU_ATMEGA2560_Addon_Board.o
+ .debug_loc     0x0000004c       0x28 BitMaskenFunktionen.o
+ .debug_loc     0x00000074      0x56a LCD_ATMEGA2560_Addon_Board.o
+ .debug_loc     0x000005de       0xbf main.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -589,11 +609,12 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x00000000       0x80
+.debug_ranges   0x00000000       0x98
  *(.debug_ranges)
- .debug_ranges  0x00000000       0x28 BitMaskenFunktionen.o
- .debug_ranges  0x00000028       0x48 LCD_ATMEGA2560_Addon_Board.o
- .debug_ranges  0x00000070       0x10 main.o
+ .debug_ranges  0x00000000       0x18 ADU_ATMEGA2560_Addon_Board.o
+ .debug_ranges  0x00000018       0x28 BitMaskenFunktionen.o
+ .debug_ranges  0x00000040       0x48 LCD_ATMEGA2560_Addon_Board.o
+ .debug_ranges  0x00000088       0x10 main.o
 
 .debug_macro
  *(.debug_macro)

@@ -7,48 +7,46 @@
 
 #include <avr/io.h>
 #include <stdio.h>
-#include "BitMaskenFunktionen.h"
 #include "LCD_ATMEGA2560_Addon_Board.h"
+#include "ADU_ATMEGA2560_Addon_Board.h"
+
+
+#define ADU_CHANNEL_POTENTIOMETER 0
+#define ADU_CHANNEL_TEMPERATURE 1
+
+
 
 int main(void)
 {
-	short resultat;
+	short resultat_poti;
+	short resultat_temp;
 	char text[20];
-	//ADU Kanal 0
-	//ADMUX 0100 0000
-	ADMUX = 0x40;
 	
-	//ADCSRA: 1000 0111 (aktivieren und nicht gestarten)
-	ADCSRA = 0x87;
-	
+	ADU_Init();
 	LCD_Init();
 	
 	DDRA = 0xFF;
 	
     while (1) 
     {
-		//1: ADU starten
-		//Bit ADSC im Register ADSCRA setzen
-		ADCSRA |= (1<<ADSC);
+		resultat_poti = ADU_Read(ADU_CHANNEL_POTENTIOMETER);
 		
-		//2: Warten, solange ADU beschäftigt ist -> Solange ADSC gesetzt ist
-		//while ((ADSCRA&0x40)!= 0)
-		while(BitQuery(&ADCSRA, ADSC) == SET)
-		{	
-		}
-		//3: Ergebnis auswerten 
-		resultat = ADCL + (ADCH << 8); 
-		//short value = ADCL + ADCH * 256;
-	
-		if(resultat > 500)
+		if(resultat_poti > 500)
 		{
 			PORTA = 0xFF;
 		}
 		else
 		PORTA = 0x00;
 		
-		sprintf(text, "ADU = %04d", resultat);
-		LCD_SendText(text, 1, 1);	
+		sprintf(text, "ADU = %04d", resultat_poti);
+		LCD_SendText(text, 1, 1);
+		
+		resultat_temp = ADU_Read(ADU_CHANNEL_TEMPERATURE);
+		
+		sprintf(text, "ADU_Temp = %04d", resultat_temp);
+		LCD_SendText(text,2,1);	
     }
 }
+
+
 
